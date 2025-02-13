@@ -13,7 +13,6 @@ class _SearchScreenState extends State<SearchScreen> {
   TextEditingController searchController = TextEditingController();
   List songs = [];
   bool isSearching = false;
-  bool showicon = false;
   void searchSong(String query) {
     searchsongs(query).then((value) {
       setState(() {
