@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../api/saavn.dart';
+import '../../widgets/Cards.dart';
+import '../../api/saavn.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -49,8 +50,8 @@ class _SearchScreenState extends State<SearchScreen> {
                         searchSong(searchController.text);
                         setState(() {
                           isSearching = true;
-                          });
-                          FocusScope.of(context).unfocus();
+                        });
+                        FocusScope.of(context).unfocus();
                       }
                     },
                     trailing: isSearching
@@ -83,12 +84,10 @@ class _SearchScreenState extends State<SearchScreen> {
                 itemCount: songs.length,
                 itemBuilder: (context, index) {
                   return MusicCard(
-                    title: songs[index]['name']
-                        .toString()
-                        .replaceAll('&quot;', ''),
-                    artist: songs[index]['artists']['primary'],
-                    image: songs[index]['image'][0]['url'],
+                    title: songs[index]['name'],
+                    image: songs[index]['image'][1]['url'],
                     url: songs[index]['downloadUrl'][3]['url'],
+                    artist: songs[index]['artists'],
                     duration: songs[index]['duration'],
                     id: songs[index]['id'],
                   );
@@ -97,51 +96,5 @@ class _SearchScreenState extends State<SearchScreen> {
             )
           ],
         ));
-  }
-}
-
-class MusicCard extends StatelessWidget {
-  final String title;
-  final List<dynamic> artist;
-  final String image;
-  final String url;
-  final dynamic duration;
-  final String id;
-  MusicCard(
-      {required this.title,
-      required this.artist,
-      required this.image,
-      required this.url,
-      required this.duration,
-      required this.id});
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      elevation: 6,
-      borderOnForeground: true,
-      child: ListTile(
-        leading: Container(
-          width: 50,
-          height: 50,
-          decoration: BoxDecoration(
-            border: Border.all(color: Colors.green, width: 2),
-            borderRadius: BorderRadius.circular(5),
-          ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(5),
-            child: Image.network(image, fit: BoxFit.cover),
-          ),
-        ),
-        title: Text(
-          title,
-          style: TextStyle(color: Colors.green[200]),
-        ),
-        subtitle: Text(artist.map((a) => a['name']).join(', ')),
-        trailing: Text(duration.toString()),
-        onTap: () {
-          print('Playing $title');
-        },
-      ),
-    );
   }
 }

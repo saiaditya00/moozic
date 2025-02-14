@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -15,25 +14,15 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         actions: [
           Container(
-            margin: EdgeInsets.only(right: 25),
-            decoration: BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.green.withOpacity(0.3),
-                  blurRadius: 10,
-                ),
-              ],
-              border: Border.all(color: Colors.green, width: 2),
-              borderRadius: BorderRadius.circular(50),
-            ),
+            margin: EdgeInsets.only(right: 10),
             child: IconButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/search');
+                Navigator.pushNamed(context, '/settings');
               },
-              icon: FaIcon(
-                FontAwesomeIcons.search,
+              icon: Icon(
+                Icons.settings,
                 color: Colors.green,
-                size: 27,
+                size: 35,
               ),
             ),
           ),

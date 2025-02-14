@@ -40,6 +40,10 @@ dependencies:
   http: ^0.13.3
   google_nav_bar: ^5.0.7
   font_awesome_flutter: ^9.1.0
+  rxdart: ^0.26.0
+  hive: ^2.0.4
+  hive_flutter: ^1.1.0
+  jiosaavn: ^0.1.0
 
 
 dev_dependencies:
