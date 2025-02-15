@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:moozic/screens/Downloads/Downloads_Screen.dart';
+import 'package:moozic/screens/Home/Home_Screen.dart';
 import 'package:moozic/screens/Settings/Settings_Screen.dart';
 import 'package:moozic/widgets/bottom_player.dart';
-import 'screens/Search/Search_screen.dart';
-import './screens/Home/Home_screen.dart';
-import 'screens/Music/Music_Screen.dart';
+import 'package:moozic/screens/Search/Search_screen.dart';
+import 'package:moozic/screens/Music/Music_Screen.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 void main() {

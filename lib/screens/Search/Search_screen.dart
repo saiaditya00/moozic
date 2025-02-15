@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../../widgets/Cards.dart';
-import '../../api/saavn.dart';
+import 'package:moozic/widgets/Cards.dart';
+import 'package:moozic/api/saavn.dart';
+
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
